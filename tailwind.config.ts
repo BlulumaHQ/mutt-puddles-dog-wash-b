@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+        display: ['"Bagel Fat One"', '"DM Sans"', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -50,6 +51,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        cream: "hsl(var(--cream))",
+        teal: "hsl(var(--teal))",
+        tomato: "hsl(var(--tomato))",
+        ink: "hsl(var(--ink))",
+        aqua: { DEFAULT: "hsl(var(--aqua))", light: "hsl(var(--aqua-light))" },
+        apricot: "hsl(var(--apricot))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -65,8 +72,8 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
-        card: "24px",
-        button: "16px",
+        card: "28px",
+        button: "14px",
       },
       keyframes: {
         "accordion-down": {
@@ -77,8 +84,10 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        marquee: { from: { transform: "translateX(0)" }, to: { transform: "translateX(-50%)" } },
       },
       animation: {
+        marquee: "marquee 28s linear infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
