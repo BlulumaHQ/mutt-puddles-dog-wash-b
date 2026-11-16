@@ -1,99 +1,97 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 183 55% 10%;
+    /* Puddle Jump palette */
+    --cream: 36 100% 96%;        /* #FFF6E9 */
+    --teal: 182 70% 18%;         /* #0E4D4F */
+    --tomato: 12 88% 56%;        /* #F2542D */
+    --ink: 14 79% 9%;            /* #2B0E05 */
+    --aqua: 176 40% 64%;         /* #7FC8C4 */
+    --aqua-light: 175 40% 76%;   /* #A9DCD8 */
+    --apricot: 34 100% 83%;      /* #FFD9A8 */
 
+    --background: var(--cream);
+    --foreground: var(--teal);
     --card: 0 0% 100%;
-    --card-foreground: 183 55% 10%;
-
+    --card-foreground: var(--teal);
     --popover: 0 0% 100%;
-    --popover-foreground: 183 55% 10%;
-
-    --primary: 63 65% 45%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 183 55% 40%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 183 10% 96%;
-    --muted-foreground: 183 20% 40%;
-
-    --accent: 183 10% 96%;
-    --accent-foreground: 183 55% 10%;
-
-    --destructive: 0 84.2% 60.2%;
+    --popover-foreground: var(--teal);
+    --primary: var(--tomato);
+    --primary-foreground: var(--ink);
+    --secondary: var(--teal);
+    --secondary-foreground: var(--cream);
+    --muted: 34 90% 91%;
+    --muted-foreground: 182 35% 28%;
+    --accent: var(--aqua-light);
+    --accent-foreground: var(--teal);
+    --destructive: 0 75% 45%;
     --destructive-foreground: 0 0% 100%;
+    --border: var(--teal);
+    --input: var(--teal);
+    --ring: var(--tomato);
+    --radius: 1rem;
 
-    --border: 183 10% 90%;
-    --input: 183 10% 90%;
-    --ring: 63 65% 45%;
-
-    --radius: 1.5rem;
-
-    --shadow-card: 0 0 0 1px rgba(0,0,0,0.04), 0 2px 4px rgba(0,0,0,0.02), 0 8px 16px rgba(0,0,0,0.04);
-    --shadow-card-hover: 0 0 0 1px rgba(0,0,0,0.04), 0 4px 8px rgba(0,0,0,0.04), 0 16px 32px rgba(0,0,0,0.08);
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: var(--cream);
+    --sidebar-foreground: var(--teal);
+    --sidebar-primary: var(--teal);
+    --sidebar-primary-foreground: var(--cream);
+    --sidebar-accent: var(--aqua-light);
+    --sidebar-accent-foreground: var(--teal);
+    --sidebar-border: var(--teal);
+    --sidebar-ring: var(--tomato);
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
+  * { @apply border-border; }
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    font-weight: 500;
   }
-
   h1, h2, h3, h4, h5, h6 {
-    @apply font-extrabold tracking-tight;
+    @apply font-display font-normal tracking-tight;
   }
 }
 
 @layer components {
-  .section-container {
-    @apply mx-auto w-full max-w-7xl px-6 lg:px-8;
-  }
+  .section-container { @apply mx-auto w-full max-w-7xl px-5 lg:px-8; }
 
-  .card-shadow {
-    box-shadow: var(--shadow-card);
-  }
+  /* Outlined, flat cards (replaces soft shadows site-wide) */
+  .card-shadow { @apply border-[3px] border-secondary; }
+  .card-shadow-hover { @apply border-[3px] border-secondary; }
 
-  .card-shadow-hover {
-    box-shadow: var(--shadow-card-hover);
-  }
-
-  .overline {
-    @apply text-xs font-bold uppercase tracking-[0.1em] text-muted-foreground;
-  }
-
-  .prose-body {
-    @apply text-lg leading-relaxed max-w-[65ch];
-    text-wrap: pretty;
-  }
-
+  .overline { @apply text-xs font-extrabold uppercase tracking-[0.14em] text-primary; }
+  .prose-body { @apply text-lg leading-relaxed max-w-[65ch]; text-wrap: pretty; }
   .heading-display {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    line-height: 1.1;
+    font-size: clamp(2.75rem, 7vw, 5.5rem);
+    line-height: 0.92;
     text-wrap: balance;
-    @apply font-extrabold tracking-[-0.04em];
+    @apply font-display;
   }
+
+  .btn-chunky {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-button border-[3px] border-secondary px-6 py-3 font-extrabold transition-transform hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-tomato { @apply btn-chunky bg-primary text-primary-foreground; }
+  .btn-teal { @apply btn-chunky bg-secondary text-secondary-foreground; }
+  .btn-outline { @apply btn-chunky bg-transparent text-secondary hover:bg-accent; }
+
+  .arch { border-radius: 200px 200px 28px 28px; }
+  .coupon { @apply rounded-card border-[3px] border-dashed border-primary; }
+
+  .squiggle {
+    display: block; width: 120px; height: 14px; margin-top: 0.75rem;
+    background: hsl(var(--tomato));
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 14'%3E%3Cpath d='M2 7c10-8 18 8 29 0s18-8 29 0 18 8 29 0 18-8 29 0' fill='none' stroke='black' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / contain;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 14'%3E%3Cpath d='M2 7c10-8 18 8 29 0s18-8 29 0 18 8 29 0 18-8 29 0' fill='none' stroke='black' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / contain;
+  }
+  .text-center .squiggle, .mx-auto > .squiggle { margin-left: auto; margin-right: auto; }
+
+  /* Inner-page inputs, accordions inherit outlines */
+  input, textarea, select { @apply min-h-[44px]; }
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
