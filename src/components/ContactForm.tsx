@@ -31,7 +31,7 @@ const ContactForm = () => {
             type="text"
             name="name"
             required
-            className="w-full px-4 py-3 rounded-button border-[3px] border-secondary bg-background text-foreground text-base font-medium focus:outline-none focus:ring-4 focus:ring-primary/40"
+            className="w-full px-4 py-3 rounded-button border-[3px] border-secondary bg-cream text-foreground text-base font-medium focus:outline-none focus:ring-4 focus:ring-primary/40"
           />
         </div>
         <div>
@@ -40,7 +40,7 @@ const ContactForm = () => {
             type="email"
             name="email"
             required
-            className="w-full px-4 py-3 rounded-button border-[3px] border-secondary bg-background text-foreground text-base font-medium focus:outline-none focus:ring-4 focus:ring-primary/40"
+            className="w-full px-4 py-3 rounded-button border-[3px] border-secondary bg-cream text-foreground text-base font-medium focus:outline-none focus:ring-4 focus:ring-primary/40"
           />
         </div>
       </div>
@@ -49,7 +49,7 @@ const ContactForm = () => {
         <input
           type="tel"
           name="phone"
-          className="w-full px-4 py-3 rounded-button border-[3px] border-secondary bg-background text-foreground text-base font-medium focus:outline-none focus:ring-4 focus:ring-primary/40"
+          className="w-full px-4 py-3 rounded-button border-[3px] border-secondary bg-cream text-foreground text-base font-medium focus:outline-none focus:ring-4 focus:ring-primary/40"
         />
       </div>
       <div>
@@ -58,7 +58,7 @@ const ContactForm = () => {
           name="message"
           rows={5}
           required
-          className="w-full px-4 py-3 rounded-button border-[3px] border-secondary bg-background text-foreground text-base font-medium focus:outline-none focus:ring-4 focus:ring-primary/40 resize-none"
+          className="w-full px-4 py-3 rounded-button border-[3px] border-secondary bg-cream text-foreground text-base font-medium focus:outline-none focus:ring-4 focus:ring-primary/40 resize-none"
         />
       </div>
       <button
