@@ -38,7 +38,7 @@ const Footer = () => (
         <p>Bonding through grooming since 2007</p>
         <p>
           © {new Date().getFullYear()} Mutt Puddles Dog Wash LLC. Website by{" "}
-          <a href="https://bluluma.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-aqua">Bluluma Design</a>
+          <a href="https://swiftsite.ca" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-aqua">SwiftSite</a>
         </p>
       </div>
     </div>
