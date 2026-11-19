@@ -39,7 +39,7 @@ const Footer = () => (
         <p>
           © {new Date().getFullYear()} Mutt Puddles Dog Wash LLC. Website by{" "}
           <a href="https://swiftsite.ca" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-aqua">SwiftSite</a>
-        </p>
+        {" "}<span className="block mt-1 opacity-80" data-concept-note>Design concept for portfolio purposes only. Not the official website of Mutt Puddles Dog Wash.</span></p>
       </div>
     </div>
   </footer>
